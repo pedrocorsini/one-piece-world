@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Embarcacao {
+    private String nome;
     private String tipo;
     private String madeira;
     private String bandeira;
@@ -45,6 +46,12 @@ public class Embarcacao {
     }
     public void setMarinheiros(List<Marinheiro> marinheiros) {
         this.marinheiros = marinheiros;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     
 }

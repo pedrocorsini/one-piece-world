@@ -4,6 +4,16 @@ public class Pirata extends Ser{
     private double recompensa;
     private Embarcacao embarcacao;
     private String titulo;
+    private TripulacaoPirata tripulacao;
+    public double multiplicarRecompensa(Pirata p, double v){
+        return p.getRecompensa()*v;
+    }
+    public TripulacaoPirata getTripulacao() {
+        return tripulacao;
+    }
+    public void setTripulacao(TripulacaoPirata tripulacao) {
+        this.tripulacao = tripulacao;
+    }
     public String getTitulo() {
         return titulo;
     }
