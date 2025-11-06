@@ -10,11 +10,11 @@ public abstract class Ser {
     private List<Ser> filhos = new ArrayList<Ser>();
     private Ilha nasceu;
     private FrutaDoDiabo fruta;
-    private Haki haki;
-    public Haki getHaki() {
+    private HakiEnum haki;
+    public HakiEnum getHaki() {
         return haki;
     }
-    public void setHaki(Haki haki) {
+    public void setHaki(HakiEnum haki) {
         this.haki = haki;
     }
     public String getNome() {

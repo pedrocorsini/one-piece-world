@@ -1,6 +1,6 @@
 package br.eng.corsini.onepiece_ptbr;
 
-public enum Haki {
+public enum HakiEnum {
     ARMAMENTO,
     OBSERVACAO,
     CONQUISTADOR;

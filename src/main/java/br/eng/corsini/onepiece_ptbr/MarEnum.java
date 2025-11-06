@@ -1,13 +1,13 @@
 package br.eng.corsini.onepiece_ptbr;
 
-public enum Mar {
-    NORTHBLUE( "Mar do Norte"),
-    WESTBLUE("Mar do Oeste"),
-    EASTBLUE("Mar do Leste"),
-    SOUTHBLUE("Mar do Sul");
+public enum MarEnum {
+    NORTHBLUE( "North Blue"),
+    WESTBLUE("West Blue"),
+    EASTBLUE("East Blue"),
+    SOUTHBLUE("South Blue");
 
     private final String nome;
-    Mar(String nome){
+    MarEnum(String nome){
         this.nome = nome;
     }
     public String getNome() {
