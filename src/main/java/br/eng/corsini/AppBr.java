@@ -1,7 +1,8 @@
-package br.eng.corsini.onepiece_ptbr;
+package br.eng.corsini;
 
+import br.eng.corsini.onepiece_ptbr.*;
 
-public class App {
+public class AppBr {
     public static void main(String[] args) {
 
         // Instanciando objetos:
