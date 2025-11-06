@@ -9,7 +9,7 @@ public class App {
 
         p.setNome("Luffy");
         p.setIdade(19);
-        p.setNavio("Thousand Sunny");
+    
         p.setRecompensa(3000000000L);
         p.setHaki(HakiEnum.ARMAMENTO);
         fruta.setNome("Hito Hito no Mi");
@@ -23,7 +23,7 @@ public class App {
 
         System.out.println("Nome do Pirata: " + p.getNome());
         System.out.println("Recompensa: " + p.getRecompensa());
-        System.out.println("Navio: " + p.getNavio());
+
         System.out.println("Idade: " + p.getIdade());
         System.out.println("Haki: " + p.getHaki());
         System.out.println(p.getFruta().getNome());
