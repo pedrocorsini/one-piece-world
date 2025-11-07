@@ -6,12 +6,12 @@ import java.util.List;
 public class Ilha {
     private String nome;
     private MarEnum localizacao;
-    private boolean afundada;
-    public boolean isAfundada() {
-        return afundada;
+    private boolean submersa;
+    public boolean isSubmersa() {
+        return submersa;
     }
-    public void setAfundada(boolean afundada) {
-        this.afundada = afundada;
+    public void setSubmersa(boolean submersa) {
+        this.submersa = submersa;
     }
     private List<String> vilas = new ArrayList<String>();
     public String getNome() {
