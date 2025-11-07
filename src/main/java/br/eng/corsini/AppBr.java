@@ -113,6 +113,8 @@ public class AppBr {
             System.out.println(" - " + vila);
         }
 
+        System.out.println(p1.getNasceu().getVilas().size());
+
         // One Piece:
 
         System.out.println("O1: " + o1.getDescricao());
