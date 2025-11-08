@@ -1,4 +1,4 @@
-package br.eng.corsini.onepiece_eng;
+package br.eng.corsini.onepiece_en;
 
 public class SecretTreasure {
     private String name;
