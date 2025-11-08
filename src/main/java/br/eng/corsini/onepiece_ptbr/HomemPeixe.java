@@ -4,7 +4,7 @@ public class HomemPeixe extends Ser{
     private String tipo;
     private float velocidadeAgua;
     public float dobrarVelocidade(HomemPeixe peixe){
-        if(peixe.getTamanho() > 2.0f)
+        if(peixe.getAltura() > 2.0f)
             return velocidadeAgua * 2.0f;
         return velocidadeAgua;
     }

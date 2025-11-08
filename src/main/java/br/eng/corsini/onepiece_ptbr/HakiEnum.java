@@ -11,6 +11,5 @@ public enum HakiEnum {
     }
     public String getNome() {
         return nome;
-    }
-    
+    }  
 }

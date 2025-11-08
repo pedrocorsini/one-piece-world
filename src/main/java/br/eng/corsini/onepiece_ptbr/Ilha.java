@@ -7,13 +7,13 @@ public class Ilha {
     private String nome;
     private MarEnum localizacao;
     private boolean submersa;
+    private List<String> vilas = new ArrayList<String>();
     public boolean isSubmersa() {
         return submersa;
     }
     public void setSubmersa(boolean submersa) {
         this.submersa = submersa;
     }
-    private List<String> vilas = new ArrayList<String>();
     public String getNome() {
         return nome;
     }

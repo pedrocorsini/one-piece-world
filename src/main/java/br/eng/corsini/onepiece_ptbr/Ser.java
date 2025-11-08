@@ -7,23 +7,23 @@ public abstract class Ser {
     private String nome;
     private int idade;
     private boolean vivo;
-    private float tamanho;
-    public float getTamanho() {
-        return tamanho;
-    }
-    public void setTamanho(float tamanho) {
-        this.tamanho = tamanho;
-    }
+    private float altura;
     private List<Ser> filhos = new ArrayList<Ser>();
     private Ilha nasceu;
     private FrutaDoDiabo fruta;
     private HakiEnum haki;
-    private List<TesouroSecreto> tesouros = new ArrayList<>();
+    private List<TesouroSecreto> tesouros = new ArrayList<TesouroSecreto>();
     public List<TesouroSecreto> getTesouros() {
         return tesouros;
     }
     public void setTesouros(List<TesouroSecreto> tesouros) {
         this.tesouros = tesouros;
+    }
+    public float getAltura() {
+        return altura;
+    }
+    public void setAltura(float altura) {
+        this.altura = altura;
     }
     public HakiEnum getHaki() {
         return haki;

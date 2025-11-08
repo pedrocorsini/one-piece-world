@@ -7,8 +7,7 @@ public enum MarEnum {
     SOUTHBLUE("South Blue"),
     GRANDLINE("Grand Line"),
     NOVOMUNDO("Novo Mundo");
-
-
+    
     private final String nome;
     MarEnum(String nome){
         this.nome = nome;

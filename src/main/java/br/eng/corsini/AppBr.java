@@ -23,7 +23,7 @@ public class AppBr {
         p1.setVivo(true);
         p1.setFruta(f1);
         p1.setEmbarcacao(e1);
-        p1.setTamanho(1.74f);
+        p1.setAltura(1.74f);
         p1.setNasceu(i1);
         p1.setRecompensa(3000000000d);
         p1.getTesouros().add(ts1); 
@@ -87,7 +87,7 @@ public class AppBr {
         System.out.println("Pirata: " + p1.getNome());
         System.out.println("Idade: " + p1.getIdade());
         System.out.println("Recompensa: " + p1.getRecompensa());
-        System.out.println("Tamanho: " + p1.getTamanho());
+        System.out.println("Tamanho: " + p1.getAltura());
         System.out.println("Titulo: " + p1.getTitulo());
         System.out.println("Nome do navio: " + p1.getEmbarcacao().getNome());
         System.out.println("Haki: " + p1.getHaki().getNome());
