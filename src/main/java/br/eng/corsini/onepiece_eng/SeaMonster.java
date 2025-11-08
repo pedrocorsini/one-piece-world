@@ -3,7 +3,7 @@ package br.eng.corsini.onepiece_eng;
 public class SeaMonster extends Being{
     private String type;
     private String color;
-    private int numberOfTeeth;
+    private int teethNumber;
     public String getType() {
         return type;
     }
@@ -17,10 +17,10 @@ public class SeaMonster extends Being{
         this.color = color;
     }
     public int getNumberOfTeeth() {
-        return numberOfTeeth;
+        return teethNumber;
     }
     public void setNumberOfTeeth(int numberOfTeeth) {
-        this.numberOfTeeth = numberOfTeeth;
+        this.teethNumber = numberOfTeeth;
     }
 
 }
