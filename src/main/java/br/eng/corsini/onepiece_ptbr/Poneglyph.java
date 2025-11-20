@@ -4,6 +4,15 @@ public class Poneglyph {
     private String mensagem;
     private boolean submerso;
     private Ilha ilha;
+
+    // Construtor
+
+    public Poneglyph(String mensagem, boolean submerso, Ilha ilha) {
+        this.mensagem = mensagem;
+        this.submerso = submerso;
+        this.ilha = ilha;
+    }
+
     public String getMensagem() {
         return mensagem;
     }

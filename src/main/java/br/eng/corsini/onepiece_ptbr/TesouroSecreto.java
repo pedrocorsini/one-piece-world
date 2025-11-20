@@ -6,9 +6,21 @@ public class TesouroSecreto {
     private double valor;
     private MarEnum encontrado;
     private String raridade;
+
+    // Construtor
+
+    public TesouroSecreto(String nome, String tipo, double valor, MarEnum encontrado, String raridade) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.valor = valor;
+        this.encontrado = encontrado;
+        this.raridade = raridade;
+    }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }

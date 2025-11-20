@@ -3,6 +3,15 @@ package br.eng.corsini.onepiece_ptbr;
 public class Sereia extends Ser{
     private String corCauda;
     private boolean falarMonstroMar;
+
+    // Construtor
+
+    public Sereia(String nome, int idade, boolean vivo, float altura, Ilha nasceu, String corCauda, boolean falarMonstroMar) {
+        super(nome, idade, vivo, altura, nasceu);
+        this.corCauda = corCauda;
+        this.falarMonstroMar = falarMonstroMar;
+    }
+
     public String getCorCauda() {
         return corCauda;
     }

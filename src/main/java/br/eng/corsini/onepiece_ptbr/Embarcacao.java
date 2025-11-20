@@ -11,6 +11,17 @@ public class Embarcacao {
     private List<Pirata> piratas = new ArrayList<Pirata>();
     private List<Marinheiro> marinheiros = new ArrayList<Marinheiro>();
     private boolean destruida;
+
+    // Construtor
+    
+    public Embarcacao(String nome, String tipo, String madeira, String bandeira, boolean destruida) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.madeira = madeira;
+        this.bandeira = bandeira;
+        this.destruida = destruida;
+    }
+    
     public boolean isDestruida() {
         return destruida;
     }

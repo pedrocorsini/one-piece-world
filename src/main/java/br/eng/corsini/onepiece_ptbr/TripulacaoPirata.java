@@ -6,7 +6,15 @@ import java.util.List;
 public class TripulacaoPirata {
     private String nome;
     private boolean destruida;
-    private List<Pirata> tripulantes = new ArrayList<Pirata>();
+    private List<Pirata> tripulantes = new ArrayList<>();
+
+    // Construtor
+
+    public TripulacaoPirata(String nome, boolean destruida) {
+        this.nome = nome;
+        this.destruida = destruida;
+    }
+    
     public double recompensaTotal(double soma){
         soma = 0;
         for(Pirata t : tripulantes){

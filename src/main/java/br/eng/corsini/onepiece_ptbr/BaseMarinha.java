@@ -9,6 +9,16 @@ public class BaseMarinha {
     private boolean submersa;
     private List<Marinheiro> marinheiros = new ArrayList<Marinheiro>();
     private Marinheiro capitao;
+
+    // Construtor
+
+    public BaseMarinha(String nome, MarEnum localizacao, boolean submersa, Marinheiro capitao){
+        this.nome = nome;
+        this.localizacao = localizacao;
+        this.submersa = submersa;
+        this.capitao = capitao;
+    }
+
     public String getNome() {
         return nome;
     }

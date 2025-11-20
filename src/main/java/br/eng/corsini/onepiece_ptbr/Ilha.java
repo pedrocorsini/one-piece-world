@@ -8,6 +8,16 @@ public class Ilha {
     private MarEnum localizacao;
     private boolean submersa;
     private List<String> vilas = new ArrayList<String>();
+
+    // Construtor
+    
+    public Ilha(String nome, MarEnum localizacao, boolean submersa){
+        this.nome = nome;
+        this.localizacao = localizacao;
+        this.submersa = submersa;
+    }
+
+
     public boolean isSubmersa() {
         return submersa;
     }

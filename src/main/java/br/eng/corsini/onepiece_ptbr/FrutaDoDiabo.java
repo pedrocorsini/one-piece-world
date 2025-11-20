@@ -4,6 +4,15 @@ public class FrutaDoDiabo {
     private String nome;
     private String poder;
     private String tipo;
+
+    // Construtor
+    
+    public FrutaDoDiabo(String nome, String poder, String tipo){
+        this.nome = nome;
+        this.poder = poder;
+        this.tipo = tipo;
+    }
+
     public String getNome() {
         return nome;
     }

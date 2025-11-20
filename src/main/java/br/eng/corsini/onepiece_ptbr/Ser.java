@@ -11,8 +11,19 @@ public abstract class Ser {
     private List<Ser> filhos = new ArrayList<Ser>();
     private Ilha nasceu;
     private FrutaDoDiabo fruta;
-    private HakiEnum haki;
-    private List<TesouroSecreto> tesouros = new ArrayList<TesouroSecreto>();
+    private List<HakiEnum> hakis = new ArrayList<>();
+    private List<TesouroSecreto> tesouros = new ArrayList<>();
+
+    // Construtor
+
+    public Ser(String nome, int idade, boolean vivo, float altura, Ilha nasceu){
+        this.nome = nome;
+        this.idade = idade;
+        this.vivo = vivo;
+        this.altura = altura;
+        this.nasceu = nasceu;
+    }
+
     public List<TesouroSecreto> getTesouros() {
         return tesouros;
     }
@@ -25,12 +36,7 @@ public abstract class Ser {
     public void setAltura(float altura) {
         this.altura = altura;
     }
-    public HakiEnum getHaki() {
-        return haki;
-    }
-    public void setHaki(HakiEnum haki) {
-        this.haki = haki;
-    }
+
     public String getNome() {
         return nome;
     }
@@ -66,5 +72,13 @@ public abstract class Ser {
     }
     public void setFruta(FrutaDoDiabo fruta) {
         this.fruta = fruta;
+    }
+
+    public List<HakiEnum> getHakis() {
+        return hakis;
+    }
+
+    public void setHakis(List<HakiEnum> hakis) {
+        this.hakis = hakis;
     }
 }
