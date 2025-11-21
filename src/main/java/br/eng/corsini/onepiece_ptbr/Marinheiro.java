@@ -19,6 +19,31 @@ public class Marinheiro extends Ser{
         this.titulo = titulo;
     }
 
+    @Override
+    public void print(){
+        System.out.println("======MARINHEIRO======");
+        super.print();
+        System.out.println("Patente: " + patente);
+        System.out.println("Piratas Derrotados: " + piratasDerrotados);
+        System.out.println("Habilidade Especial: " + habilidadeEspecial);
+        System.out.println("Embarcacao: " + (embarcacao != null ? embarcacao.getNome() : "Nao possui"));
+        System.out.println("Titulo: " + titulo);
+        if(getFilhos() == null || getFilhos().isEmpty()){
+            System.out.println("Filhos: Nenhum");
+        }else{
+            System.out.println("Filhos:");
+            for(Ser filho : getFilhos()){
+                if(filho==null){
+                    System.out.println(" - null");
+                }else{
+                    System.out.println(" - " + filho.getNome());
+                }
+            }
+        }
+        System.out.println("======================\n");
+    }
+
+
     public Embarcacao getEmbarcacao() {
         return embarcacao;
     }

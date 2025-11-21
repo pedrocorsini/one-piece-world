@@ -13,6 +13,14 @@ public class FrutaDoDiabo {
         this.tipo = tipo;
     }
 
+    public void printFruta(){
+        System.out.println("======================");
+        System.out.println("Nome: " + nome);
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Poder: " + poder);
+        System.out.println("======================\n");
+    }
+
     public String getNome() {
         return nome;
     }

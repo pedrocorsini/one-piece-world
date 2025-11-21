@@ -24,6 +24,52 @@ public abstract class Ser {
         this.nasceu = nasceu;
     }
 
+    public void print(){
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade + " anos");
+        System.out.println("Esta vivo? " + (vivo ? "Sim" : "Nao")); 
+        System.out.println("Altura: " + altura + "m");
+        System.out.println("Ilha de nascimento: " + (nasceu != null ? nasceu.getNome() : "Desconhecida"));
+        System.out.println("Fruta do diabo: " + (fruta != null ? fruta.getNome() : "Nenhuma"));
+        //print dos hakis
+        if(getHakis() == null || getHakis().isEmpty()){
+            System.out.println("Hakis: Nenhum");
+        }else{
+            System.out.println("Hakis: ");
+            for(HakiEnum h : getHakis()){
+                if(h==null){
+                    System.out.println(" - null");
+                }else{
+                    System.out.println(" - " + h.getNome());
+                }               
+            }
+        }
+        if(getFilhos() == null || getFilhos().isEmpty()){
+            System.out.println("Filhos: Nenhum");
+        }else{
+            System.out.println("Filhos:");
+            for(Ser filho : getFilhos()){
+                if(filho==null){
+                    System.out.println(" - null");
+                }else{
+                    System.out.println(" - " + filho.getNome());
+                }
+            }
+        }
+        if(getTesouros() == null || getTesouros().isEmpty()){
+            System.out.println("Tesouros Secretos: Nenhum");
+        }else{
+            System.out.println("Tesouros Secretos: ");
+            for(TesouroSecreto t : getTesouros()){
+                if(t==null){
+                    System.out.println(" - null");
+                }else{
+                    System.out.println(" - " + t.getNome());
+                }
+            }
+        }
+    }
+
     public List<TesouroSecreto> getTesouros() {
         return tesouros;
     }

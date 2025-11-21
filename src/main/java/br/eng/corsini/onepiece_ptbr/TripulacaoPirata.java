@@ -15,6 +15,17 @@ public class TripulacaoPirata {
         this.destruida = destruida;
     }
     
+    public void printTripulacao(){
+        System.out.println("======================");
+        System.out.println("Nome da Tripulacao: " + nome);
+        System.out.println("Destruida: " + (destruida ? "Sim" : "Nao"));
+        System.out.println("Tripulantes: ");
+        for(Pirata p: tripulantes){
+            System.out.println(" - " + p.getNome());
+        }
+        System.out.println("======================\n");
+    }
+
     public double recompensaTotal(double soma){
         soma = 0;
         for(Pirata t : tripulantes){

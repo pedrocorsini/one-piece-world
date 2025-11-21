@@ -16,6 +16,17 @@ public class Revolucionario extends Ser{
         this.cargo = cargo;
     }
 
+    @Override
+    public void print(){
+        System.out.println("====REVOLUCIONARIO====");
+        super.print();
+        System.out.println("Nivel de Ameaca: " + nivelAmeaca);
+        System.out.println("Segredo: " + segredo);
+        System.out.println("Recompensa: $" + String.format("%.2f", recompensa));
+        System.out.println("Cargo: " + cargo);
+        System.out.println("======================\n");
+    }
+
     public String getNivelAmeaca() {
         return nivelAmeaca;
     }

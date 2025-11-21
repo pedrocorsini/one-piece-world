@@ -7,7 +7,7 @@ public class BaseMarinha {
     private String nome;
     private MarEnum localizacao;
     private boolean submersa;
-    private List<Marinheiro> marinheiros = new ArrayList<Marinheiro>();
+    private List<Marinheiro> marinheiros = new ArrayList<>();
     private Marinheiro capitao;
 
     // Construtor
@@ -17,6 +17,19 @@ public class BaseMarinha {
         this.localizacao = localizacao;
         this.submersa = submersa;
         this.capitao = capitao;
+    }
+
+    public void printBase(){
+        System.out.println("======================");
+        System.out.println("Base: " + nome);
+        System.out.println("Localizacao: " + localizacao.getNome());
+        System.out.println("Capitao: " + capitao.getNome());
+        System.out.println("Submersa: " + (submersa ? "Sim" : "Nao"));
+        System.out.println("Marinheiros: ");
+        for(Marinheiro m : marinheiros){
+            System.out.println(" - " + m.getNome());
+        }
+        System.out.println("======================\n");
     }
 
     public String getNome() {

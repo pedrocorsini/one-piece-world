@@ -4,10 +4,7 @@ import br.eng.corsini.onepiece_ptbr.*;
 
 public class MainBr {
     public static void main(String[] args) {
-        System.out.println("==================");
-        System.out.println("Mundo de One Piece");
-        System.out.println("==================");
-
+    
         // Criacao de Ilhas:
         Ilha dawn = new Ilha("Ilha Dawn", MarEnum.EASTBLUE, false);
         dawn.getVilas().add("Vilha Fusha");
@@ -18,25 +15,30 @@ public class MainBr {
         zoroilha.getVilas().add("Vila Shimotsuki");
         Ilha ilhapeixe = new Ilha("Ilha dos Homem-Peixe", MarEnum.NOVOMUNDO, true);
         ilhapeixe.getVilas().add("Reino Ryugu");
+        Ilha baterilla = new Ilha("Ilha Baterilla", MarEnum.EASTBLUE, false);
 
         // Criacao de Embarcacoes:
         Embarcacao sunny = new Embarcacao("Thousand Sunny", "Navio", "Madeira de Adao", "Caveira com Chapeu de Palha", false);
         Embarcacao orojackson = new Embarcacao("Oro Jackson", "Navio", "Madeira de Adao", "Caveira Roger", true);
         Embarcacao naviogarp = new Embarcacao("Navio Monkey D. Garp", "Navio", "Carvalho", "Marinha", false);
+        Embarcacao mobydick = new Embarcacao("Moby Dick", "Navio", "Pinheiro", "Bandeira Barba Branca", true);
 
         // Criacao de Tripulacoes Piratas:
         TripulacaoPirata mugiwara = new TripulacaoPirata("Chapeus de Palha", false);
         TripulacaoPirata piratasroger = new TripulacaoPirata("Piratas do Roger", true);
+        TripulacaoPirata piratasbarbabranca = new TripulacaoPirata("Piratas do Barba Branca", true);
 
         //Criacao de Frutas do Diabo:
         FrutaDoDiabo gomugomu = new FrutaDoDiabo("Fruta do Humano modelo Nika", "Deus do Sol Nika", "Zoan Mitica");
         FrutaDoDiabo luz = new FrutaDoDiabo("Fruta da Luz", "Luz", "Logia");
         FrutaDoDiabo zushi = new FrutaDoDiabo("Zushi Zushi no Mi", "Gravidade", "Paramecia");
+        FrutaDoDiabo meramera = new FrutaDoDiabo("Fruta do Fogo", "Fogo", "Logia");
 
         // Criacao de Piratas:
 
         // Luffy:
-        Pirata luffy = new Pirata("Monkey D. Luffy", 19, true, 1.74f, dawn, 3000000000d, sunny, "Yonkou", mugiwara, "Capitao");
+        Pirata luffy = new Pirata("Monkey D. Luffy", 19, true, 1.74f, dawn, sunny, "Yonkou", mugiwara, "Capitao");
+        luffy.setRecompensa(3000000000d);
         mugiwara.getTripulantes().add(luffy);
         sunny.getPiratas().add(luffy);
         luffy.getHakis().add(HakiEnum.ARMAMENTO);
@@ -45,8 +47,9 @@ public class MainBr {
         luffy.setFruta(gomugomu);
 
         // Gol D. Roger:
-        Pirata roger = new Pirata("Gol D. Roger", 53, false, 2.74f, polestar, 5564800000d, orojackson, "Reu dos Piratas", 
+        Pirata roger = new Pirata("Gol D. Roger", 53, false, 2.74f, polestar, orojackson, "Rei dos Piratas", 
         piratasroger, "Capitao");
+        roger.setRecompensa(5564800000d);
         orojackson.getPiratas().add(roger);
         piratasroger.getTripulantes().add(roger);
         roger.getHakis().add(HakiEnum.ARMAMENTO);
@@ -54,13 +57,22 @@ public class MainBr {
         roger.getHakis().add(HakiEnum.OBSERVACAO);
 
         // Zoro
-        Pirata zoro = new Pirata("Roronoa Zoro", 21, true, 1.81f, zoroilha, 1111000000d, sunny, "Cacador de Piratas", 
+        Pirata zoro = new Pirata("Roronoa Zoro", 21, true, 1.81f, zoroilha, sunny, "Cacador de Piratas", 
         mugiwara, "Espadachim");
+        zoro.setRecompensa(1111000000d);
         sunny.getPiratas().add(zoro);
         mugiwara.getTripulantes().add(zoro);
         zoro.getHakis().add(HakiEnum.ARMAMENTO);
         zoro.getHakis().add(HakiEnum.OBSERVACAO);
 
+        // Ace
+        Pirata ace = new Pirata("Portgas D. Ace", 20, false, 1.85f, baterilla, mobydick, "Ace Punhos de Fogo", piratasbarbabranca,
+            "Capitao da Terceira Divisao");
+        ace.setRecompensa(550000000d);
+        mobydick.getPiratas().add(ace);
+        piratasbarbabranca.getTripulantes().add(ace);
+        ace.setFruta(meramera);
+        roger.getFilhos().add(ace);
         
         // Criacao de Marinheiros:
 
@@ -84,6 +96,10 @@ public class MainBr {
         fujitora.getHakis().add(HakiEnum.ARMAMENTO);
         fujitora.getHakis().add(HakiEnum.OBSERVACAO);
 
+        // Akainu
+        Marinheiro akainu = new Marinheiro("Sakazuki Akainu", 55, true, 3.06f, null, "Almirante da Frota", 1, 
+        "Super Pulo", null, "Cachorro Vermelho");
+
         // Criacao de Homem Peixe:
 
         HomemPeixe netuno = new HomemPeixe("Rei Netuno", 70, true, 12.2f, ilhapeixe, "Sereiano", 200);
@@ -100,14 +116,107 @@ public class MainBr {
         garp.getFilhos().add(dragon);
         dragon.getFilhos().add(luffy);
 
+        // Criacao de Monstro do Mar
+        MonstroMar kraken = new MonstroMar("Kraken", 100, true, 200, null, "Polvo Gigante", "Azul", 1000);
+
         // Criacao de Poneglyphs e RoadPoneglyphs
 
         Poneglyph poneglyph = new Poneglyph("Ha 800 anos atras o mundo afundou!", true, ilhapeixe);
-        RoadPoneglyph rp = new RoadPoneglyph("Voce nao achou o One Piece", false, polestar, "0000");
-        RoadPoneglyph rp2 = new RoadPoneglyph("Voce achou a verdadeira coordenada do OnePiece!", false, null, "1999 N, 1997 L");
-        rp2.localizarOnePiece(rp2);
-        rp.localizarOnePiece(rp);
+        Poneglyph rp1 = new Poneglyph("Voce nao achou o One Piece", false, polestar);
+        Poneglyph rp2 = new Poneglyph("Voce achou a verdadeira coordenada do OnePiece!", false, null);
 
-        
+        // Criacao de Base Marinha
+
+        BaseMarinha qg = new BaseMarinha("QG da Marinha", MarEnum.NOVOMUNDO, false, akainu);
+        qg.getMarinheiros().add(fujitora);
+        qg.getMarinheiros().add(kizaru);
+        qg.getMarinheiros().add(garp);
+
+        // Criacao de Tesouro Secreto
+
+        TesouroSecreto enma = new TesouroSecreto("Enma", "Espada", 100000d, MarEnum.NOVOMUNDO, "Lendaria");
+        zoro.getTesouros().add(enma);
+
+        // One Piece
+        OnePiece.getInstancia().setDescricao("Tesouro do Rei dos Piratas");
+        OnePiece.getInstancia().setLocalizacao("Desconhecida");
+        OnePiece o1 = OnePiece.getInstancia();
+        OnePiece o2 = OnePiece.getInstancia();
+        // PRINTS
+
+        System.out.println("\n======================");
+        System.out.println("  Mundo de One Piece  ");
+        System.out.println("======================\n");
+
+        System.out.println("========SERES========\n");
+
+        luffy.print();
+        zoro.print();
+        garp.print();
+        dragon.print();
+        kizaru.print();
+        netuno.print();
+        shirahoshi.print();
+        roger.print();
+        ace.print();
+        fujitora.print();
+        kraken.print();
+
+        System.out.println("====FRUTAS DO DIABO===\n");
+        gomugomu.printFruta();
+        meramera.printFruta();
+        zushi.printFruta();
+        luz.printFruta();
+    
+        System.out.println("======EMBARCACOES=====\n");
+        orojackson.printEmbarcacao();
+        sunny.printEmbarcacao();
+        mobydick.printEmbarcacao();
+        naviogarp.printEmbarcacao();
+
+        System.out.println("=====TRIPULACOES=====");
+        mugiwara.printTripulacao();
+        piratasbarbabranca.printTripulacao();
+        piratasroger.printTripulacao();
+
+        System.out.println("=======ILHAS==========\n");
+        dawn.printInfo();
+        polestar.printInfo();
+        zoroilha.printInfo();
+        ilhapeixe.printInfo();
+        baterilla.printInfo();
+
+        System.out.println("======PONEGLYPHS======\n");
+        poneglyph.printPon();
+        rp1.printPon();
+        rp2.printPon();
+
+        System.out.println("=LOCALIZAR ONE PIECE=\n");
+
+        System.out.println("Localizacao o1: " + o1.getLocalizacao());
+        System.out.println("Localizacao o2: " + o2.getLocalizacao());
+        System.out.println("Objeto o1 == o2: " + (o1 == o2));
+
+        System.out.println("\nChamando metodo de localizar o one piece...\n");
+        System.out.print("Poneglyh Comum: ");
+        poneglyph.localizarOnePiece(poneglyph);
+        System.out.print("Road Poneglyh 1: ");
+        rp1.localizarOnePiece(rp1);
+        System.out.print("Road Poneglyh 2: ");
+        rp2.localizarOnePiece(rp2);
+
+        System.out.println("\nLocalizacao o1: " + o1.getLocalizacao());
+        System.out.println("Localizacao o2: " + o2.getLocalizacao());
+        System.out.println("Objeto o1 == o2: " + (o1 == o2));
+
+        System.out.println("");
+        rp2.printPon();
+
+        System.out.println("===BASES DA MARINHA===\n");
+        qg.printBase();
+
+        System.out.println("==TESOUROS SECRETOS===\n");
+        enma.printTesouro();
+
     }
 }

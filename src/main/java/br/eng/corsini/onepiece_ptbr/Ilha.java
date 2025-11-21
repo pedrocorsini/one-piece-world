@@ -7,7 +7,7 @@ public class Ilha {
     private String nome;
     private MarEnum localizacao;
     private boolean submersa;
-    private List<String> vilas = new ArrayList<String>();
+    private List<String> vilas = new ArrayList<>();
 
     // Construtor
     
@@ -15,6 +15,22 @@ public class Ilha {
         this.nome = nome;
         this.localizacao = localizacao;
         this.submersa = submersa;
+    }
+
+    public void printInfo(){
+        System.out.println("======================");
+        System.out.println("Nome da Ilha: " + nome);
+        System.out.println("Localizacao: " + localizacao.getNome());
+        System.out.println("Submersa: " + (submersa ? "Sim" : "Nao")); 
+        if(getVilas() == null || getVilas().isEmpty()){
+            System.out.println("Vilas/Cidades/Reinos: Nenhum");
+        }else{
+            System.out.println("Vilas/Cidades/Reinos:");
+            for(String vilas : getVilas()){
+                System.out.println(" - " + vilas);
+            }
+        }
+        System.out.println("======================\n");
     }
 
 

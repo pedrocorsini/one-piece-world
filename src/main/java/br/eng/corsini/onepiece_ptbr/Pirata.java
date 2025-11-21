@@ -8,14 +8,30 @@ public class Pirata extends Ser{
     private String funcao;
     private Estado estado = new Comum();
 
-    public Pirata(String nome, int idade, boolean vivo, float altura, Ilha nasceu, double recompensa, 
+    public Pirata(String nome, int idade, boolean vivo, float altura, Ilha nasceu, 
         Embarcacao embarcacao, String titulo, TripulacaoPirata tripulacao, String funcao) {
         super(nome, idade, vivo, altura, nasceu);
-        this.recompensa = recompensa;
         this.embarcacao = embarcacao;
         this.titulo = titulo;
         this.tripulacao = tripulacao;
         this.funcao = funcao;
+    }
+
+    @Override
+    public void print(){
+        System.out.println("========PIRATA========");
+        super.print();
+        System.out.println("Recompensa: $" + String.format("%.2f", getRecompensa()));
+        System.out.println("Embarcacao: " + (embarcacao != null ? embarcacao.getNome() : "Nao possui"));
+        System.out.println("Titulo: " + titulo);
+        System.out.println("Tripulacao Pirata: " + tripulacao.getNome());
+        System.out.println("Funcao: " + funcao);
+        if(getEstado() instanceof Imperador){
+            System.out.println("Estado: IMPERADOR");
+        }else{
+            System.out.println("Estado: COMUM");
+        }
+        System.out.println("======================\n");
     }
 
     public double multiplicarRecompensa(Pirata p, double v){

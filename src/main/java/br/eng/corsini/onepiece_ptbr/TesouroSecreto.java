@@ -17,6 +17,16 @@ public class TesouroSecreto {
         this.raridade = raridade;
     }
 
+    public void printTesouro(){
+        System.out.println("======================");
+        System.out.println("Nome do Tesouro: " + nome);
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Valor: $" + valor);
+        System.out.println("Raridade: " + raridade);
+        System.out.println("Encontrado: " + (encontrado != null ? encontrado.getNome() : "Nao encontrado"));
+        System.out.println("======================\n");
+    }
+
     public String getNome() {
         return nome;
     }

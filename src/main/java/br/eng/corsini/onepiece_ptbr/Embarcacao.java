@@ -9,7 +9,7 @@ public class Embarcacao {
     private String madeira;
     private String bandeira;
     private List<Pirata> piratas = new ArrayList<Pirata>();
-    private List<Marinheiro> marinheiros = new ArrayList<Marinheiro>();
+    private List<Marinheiro> marinheiros = new ArrayList<>();
     private boolean destruida;
 
     // Construtor
@@ -21,6 +21,30 @@ public class Embarcacao {
         this.bandeira = bandeira;
         this.destruida = destruida;
     }
+    
+    // Print
+    public void printEmbarcacao(){
+        System.out.println("======================");
+        System.out.println("Nome: " + nome);
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Madeira: " + madeira);
+        System.out.println("Bandeira: " + bandeira);
+        System.out.println("Destruida: " + (destruida ? "Sim" : "Nao"));
+
+        if(getPiratas() == null || getPiratas().isEmpty()){
+            System.out.println("Marinheiros: ");
+            for(Marinheiro m : getMarinheiros()){
+                System.out.println(" - " + m.getNome());
+            }
+        }else{
+            System.out.println("Piratas: ");
+            for(Pirata p : getPiratas()){
+                System.out.println(" - " + p.getNome());
+            }
+        }
+        System.out.println("======================\n");
+    }
+
     
     public boolean isDestruida() {
         return destruida;

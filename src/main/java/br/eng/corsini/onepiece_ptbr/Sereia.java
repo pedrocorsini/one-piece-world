@@ -12,6 +12,15 @@ public class Sereia extends Ser{
         this.falarMonstroMar = falarMonstroMar;
     }
 
+    @Override
+    public void print(){
+        System.out.println("========SEREIA========");
+        super.print();
+        System.out.println("Cor da cauda: " + corCauda);
+        System.out.println("Fala com monstros do mar? " + (falarMonstroMar ? "Sim" : "Nao"));
+        System.out.println("======================\n");
+    }
+
     public String getCorCauda() {
         return corCauda;
     }
