@@ -71,7 +71,7 @@ one-piece-world/
    ```
 4. **Run the project**
    ```bash
-   mvn exec:java -Dexec.mainClass="<package-name>.<MainClass>"
+   mvn exec:java -Dexec.mainClass="br.eng.corsini.<MainClass>"
    ```
 
 ## ✨ Author
