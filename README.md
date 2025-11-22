@@ -14,7 +14,6 @@ This repository is a Java Project about the **One Piece World**, the goal is to 
 ## 📚 Project Overview
 
 - Built with **Java** (Maven project structure).
-- First steps in **software modeling** with diagrams.
 - Includes **source code, UML diagrams, and project configuration**.
 
 ## 📂 Repository Structe
@@ -49,10 +48,10 @@ one-piece-world/
 
 ## 🖼️ Project Diagram
 
-English version
+- English version:
 <img src="src/main/resources/english-onepiece-diagram.png" alt="english-diagram">
 
-Portuguese version
+- Portuguese version:
 <img src="src/main/resources/onepiece-diagram.png" alt="portuguese-diagram">
 
 ---
