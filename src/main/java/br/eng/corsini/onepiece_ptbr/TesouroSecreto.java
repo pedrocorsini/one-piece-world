@@ -18,10 +18,10 @@ public class TesouroSecreto {
     }
 
     public void printTesouro(){
-        System.out.println("======================");
+        System.out.println("========TESOURO=======");
         System.out.println("Nome do Tesouro: " + nome);
         System.out.println("Tipo: " + tipo);
-        System.out.println("Valor: $" + valor);
+        System.out.println("Valor: $" + String.format("%.2f", valor));
         System.out.println("Raridade: " + raridade);
         System.out.println("Encontrado: " + (encontrado != null ? encontrado.getNome() : "Nao encontrado"));
         System.out.println("======================\n");

@@ -24,12 +24,17 @@ public class Pirata extends Ser{
         System.out.println("Recompensa: $" + String.format("%.2f", getRecompensa()));
         System.out.println("Embarcacao: " + (embarcacao != null ? embarcacao.getNome() : "Nao possui"));
         System.out.println("Titulo: " + titulo);
-        System.out.println("Tripulacao Pirata: " + tripulacao.getNome());
+        System.out.println("Tripulacao Pirata: " + (tripulacao!=null ? tripulacao.getNome() : "Nenhuma"));
         System.out.println("Funcao: " + funcao);
         if(getEstado() instanceof Imperador){
             System.out.println("Estado: IMPERADOR");
         }else{
             System.out.println("Estado: COMUM");
+        }
+        if(getEstado() instanceof Imperador){
+            System.out.println("Fama: " + Imperador.getFama());
+        }else if(getEstado() instanceof Comum){
+            System.out.println("Malandragem: " + Comum.getMalandragem());
         }
         System.out.println("======================\n");
     }
@@ -52,8 +57,6 @@ public class Pirata extends Ser{
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    
-    
     public double getRecompensa() {
         return recompensa;
     }

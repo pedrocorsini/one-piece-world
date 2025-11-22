@@ -6,6 +6,7 @@ import java.util.List;
 public class TripulacaoPirata {
     private String nome;
     private boolean destruida;
+    private Pirata capitao;
     private List<Pirata> tripulantes = new ArrayList<>();
 
     // Construtor
@@ -16,18 +17,20 @@ public class TripulacaoPirata {
     }
     
     public void printTripulacao(){
-        System.out.println("======================");
+        System.out.println("======TRIPULACAO======");
         System.out.println("Nome da Tripulacao: " + nome);
+        System.out.println("Capitao: " + (capitao != null ? capitao.getNome() : "Nenhum"));
         System.out.println("Destruida: " + (destruida ? "Sim" : "Nao"));
         System.out.println("Tripulantes: ");
         for(Pirata p: tripulantes){
             System.out.println(" - " + p.getNome());
         }
+        double total = recompensaTotal();
+        System.out.println("Recompensa Total: $" + String.format("%.2f", total));
         System.out.println("======================\n");
     }
-
-    public double recompensaTotal(double soma){
-        soma = 0;
+    public double recompensaTotal(){
+        double soma = 0;
         for(Pirata t : tripulantes){
             soma+=t.getRecompensa();
         }
@@ -51,5 +54,12 @@ public class TripulacaoPirata {
     public void setTripulantes(List<Pirata> tripulantes) {
         this.tripulantes = tripulantes;
     }
-    
+
+    public Pirata getCapitao() {
+        return capitao;
+    }
+
+    public void setCapitao(Pirata capitao) {
+        this.capitao = capitao;
+    }
 }

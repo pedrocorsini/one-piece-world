@@ -11,8 +11,88 @@ public abstract class Being {
     private List<Being> children = new ArrayList<Being>();
     private Island birthplace;
     private DevilFruit fruit;
-    private HakiEnum haki;
+    private List<HakiEnum> hakis = new ArrayList<>();
     private List<SecretTreasure> treasures = new ArrayList<SecretTreasure>();
+    private boolean canSwim;
+
+    // Constructor
+
+    public Being(String name, int age, boolean alive, float height, Island birthplace){
+        this.name = name;
+        this.age = age;
+        this.alive = alive;
+        this.height = height;
+        this.birthplace = birthplace;
+    }
+
+    public void canSwim(){
+        if(getFruit()==null){
+            setCanSwim(true);
+        }else{
+            setCanSwim(false);
+        }
+    }
+
+    public void print(){
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age + " years");
+        System.out.println("Is alive? " + (alive ? "Yes" : "No")); 
+        System.out.println("Height: " + height + "m");
+        System.out.println("Birthplace: " + (birthplace != null ? birthplace.getName() : "Unknown"));
+        System.out.println("Devil Fruit: " + (fruit != null ? fruit.getName() : "None"));
+        canSwim();
+        System.out.println("Can swim: " + (canSwim ? "Yes" : "No"));
+        
+        if(getHakis() == null || getHakis().isEmpty()){
+            System.out.println("Hakis: None");
+        }else{
+            System.out.println("Hakis: ");
+            for(HakiEnum h : getHakis()){
+                if(h==null){
+                    System.out.println(" - null");
+                }else{
+                    System.out.println(" - " + h.getName());
+                }               
+            }
+        }
+        if(getChildren() == null || getChildren().isEmpty()){
+            System.out.println("Children: None");
+        }else{
+            System.out.println("Children: ");
+            for(Being c : getChildren()){
+                if(c==null){
+                    System.out.println(" - null");
+                }else{
+                    System.out.println(" - " + c.getName());
+                }               
+            }
+        }
+        if (getTreasures() == null || getTreasures().isEmpty()){
+            System.out.println("Secret Treasures: None");
+        }else{
+            System.out.println("Secret Treasures: ");
+            for(SecretTreasure t : getTreasures()){
+                if(t==null){
+                    System.out.println(" - null");
+                }else{
+                    System.out.println(" - " + t.getName());
+                }               
+            }
+        }
+    }
+
+    public List<HakiEnum> getHakis() {
+        return hakis;
+    }
+    public void setHakis(List<HakiEnum> hakis) {
+        this.hakis = hakis;
+    }
+    public boolean isCanSwim() {
+        return canSwim;
+    }
+    public void setCanSwim(boolean canSwim) {
+        this.canSwim = canSwim;
+    }
     public String getName() {
         return name;
     }
@@ -54,12 +134,6 @@ public abstract class Being {
     }
     public void setFruit(DevilFruit fruit) {
         this.fruit = fruit;
-    }
-    public HakiEnum getHaki() {
-        return haki;
-    }
-    public void setHaki(HakiEnum haki) {
-        this.haki = haki;
     }
     public List<SecretTreasure> getTreasures() {
         return treasures;

@@ -4,15 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Island {
-    private String nme;
+    private String name;
     private SeaEnum location;
-    private boolean submersed;
+    private boolean submerged;
     private List<String> villages = new ArrayList<String>();
-    public String getNme() {
-        return nme;
+    private Being governor;
+
+    // Constructor
+
+    public Island(String name, SeaEnum location, boolean submersed){
+        this.name = name;
+        this.location = location;
+        this.submerged = submersed;
     }
-    public void setNme(String nme) {
-        this.nme = nme;
+
+    public void printInfo(){
+        System.out.println("=========ISLAND=========");
+        System.out.println("Island Name: " + name);
+        System.out.println("Location: " + location.getName());
+        System.out.println("Governor: " + (governor!=null ? governor.getName() : "None"));
+        System.out.println("Submerged: " + (submerged ? "Yes" : "No")); 
+        if(getVillages() == null || getVillages().isEmpty()){
+            System.out.println("Villages/Cities/Kingdoms: None");
+        }else{
+            System.out.println("Villages/Cities/Kingdoms:");
+            for(String village : getVillages()){
+                System.out.println(" - " + village);
+            }
+        }
+        System.out.println("=======================\n");
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
     public SeaEnum getLocation() {
         return location;
@@ -20,17 +47,25 @@ public class Island {
     public void setLocation(SeaEnum location) {
         this.location = location;
     }
-    public boolean isSubmersed() {
-        return submersed;
+    public boolean isSubmerged() {
+        return submerged;
     }
-    public void setSubmersed(boolean submersed) {
-        this.submersed = submersed;
+    public void setSubmerged(boolean submersed) {
+        this.submerged = submersed;
     }
     public List<String> getVillages() {
         return villages;
     }
     public void setVillages(List<String> villages) {
         this.villages = villages;
+    }
+
+    public Being getGovernor() {
+        return governor;
+    }
+
+    public void setGovernor(Being governor) {
+        this.governor = governor;
     }
     
 }

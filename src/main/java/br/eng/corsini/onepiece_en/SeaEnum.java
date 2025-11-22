@@ -6,13 +6,13 @@ public enum SeaEnum {
     EASTBLUE("East Blue"),
     SOUTHBLUE("South Blue"),
     GRANDLINE("Grand Line"),
-    NOVOMUNDO("New World");
+    NEWWORLD("New World");
     
     private final String name;
     SeaEnum(String name){
         this.name = name;
     }
-    public String getNome() {
+    public String getName() {
         return name;
     }
 }

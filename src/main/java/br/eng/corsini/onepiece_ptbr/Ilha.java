@@ -8,6 +8,7 @@ public class Ilha {
     private MarEnum localizacao;
     private boolean submersa;
     private List<String> vilas = new ArrayList<>();
+    private Ser governante;
 
     // Construtor
     
@@ -18,9 +19,10 @@ public class Ilha {
     }
 
     public void printInfo(){
-        System.out.println("======================");
+        System.out.println("=========ILHA=========");
         System.out.println("Nome da Ilha: " + nome);
         System.out.println("Localizacao: " + localizacao.getNome());
+        System.out.println("Governante: " + (governante!=null ? governante.getNome() : "Nenhum"));
         System.out.println("Submersa: " + (submersa ? "Sim" : "Nao")); 
         if(getVilas() == null || getVilas().isEmpty()){
             System.out.println("Vilas/Cidades/Reinos: Nenhum");
@@ -32,7 +34,6 @@ public class Ilha {
         }
         System.out.println("======================\n");
     }
-
 
     public boolean isSubmersa() {
         return submersa;
@@ -57,6 +58,14 @@ public class Ilha {
     }
     public void setVilas(List<String> vilas) {
         this.vilas = vilas;
+    }
+
+    public Ser getGovernante() {
+        return governante;
+    }
+
+    public void setGovernante(Ser governante) {
+        this.governante = governante;
     }
     
 }

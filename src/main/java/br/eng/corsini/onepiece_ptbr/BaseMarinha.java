@@ -20,7 +20,7 @@ public class BaseMarinha {
     }
 
     public void printBase(){
-        System.out.println("======================");
+        System.out.println("=========BASE=========");
         System.out.println("Base: " + nome);
         System.out.println("Localizacao: " + localizacao.getNome());
         System.out.println("Capitao: " + capitao.getNome());

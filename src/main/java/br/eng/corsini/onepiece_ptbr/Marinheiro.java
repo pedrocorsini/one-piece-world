@@ -28,18 +28,6 @@ public class Marinheiro extends Ser{
         System.out.println("Habilidade Especial: " + habilidadeEspecial);
         System.out.println("Embarcacao: " + (embarcacao != null ? embarcacao.getNome() : "Nao possui"));
         System.out.println("Titulo: " + titulo);
-        if(getFilhos() == null || getFilhos().isEmpty()){
-            System.out.println("Filhos: Nenhum");
-        }else{
-            System.out.println("Filhos:");
-            for(Ser filho : getFilhos()){
-                if(filho==null){
-                    System.out.println(" - null");
-                }else{
-                    System.out.println(" - " + filho.getNome());
-                }
-            }
-        }
         System.out.println("======================\n");
     }
 

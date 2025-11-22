@@ -14,7 +14,7 @@ public class FrutaDoDiabo {
     }
 
     public void printFruta(){
-        System.out.println("======================");
+        System.out.println("=========FRUTA========");
         System.out.println("Nome: " + nome);
         System.out.println("Tipo: " + tipo);
         System.out.println("Poder: " + poder);

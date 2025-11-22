@@ -7,6 +7,39 @@ public class Pirate extends Being{
     private PirateCrew crew;
     private String function;
     private State state = new Common();
+
+    public Pirate(String name, int age, boolean alive, float height, Island birthplace, 
+        Ship ship, String title, PirateCrew crew, String function) {
+        super(name, age, alive, height, birthplace);
+        this.ship = ship;
+        this.title = title;
+        this.crew = crew;
+        this.function = function;
+    }
+
+    @Override
+    public void print(){
+        System.out.println("========PIRATE========");
+        super.print();
+        System.out.println("Bounty: $" + String.format("%.2f", getBounty()));
+        System.out.println("Ship: " + (ship != null ? ship.getName() : "Does not have"));
+        System.out.println("Title: " + title);
+        System.out.println("Pirate Crew: " + (crew!=null ? crew.getName() : "None"));
+        System.out.println("Function: " + function);
+        if(getState() instanceof Emperor){
+            System.out.println("State: EMPEROR");
+        }else{
+            System.out.println("State: COMMON");
+        }
+        if(getState() instanceof Emperor){
+            System.out.println("Fame: " + Emperor.getFame());
+        }else if(getState() instanceof Common){
+            System.out.println("Cunning: " + Common.getTrickery());
+        }
+        System.out.println("======================\n");
+    }
+
+
     public double multiplyBounty(Pirate p, double v){
         return p.getBounty()*v;
     }

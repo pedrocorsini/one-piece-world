@@ -4,6 +4,23 @@ public class DevilFruit {
     private String name;
     private String power;
     private String type;
+
+    // Constructor
+
+    public DevilFruit(String name, String power, String type){
+        this.name = name;
+        this.power = power;
+        this.type = type;
+    }
+
+    public void printFruit(){
+        System.out.println("=========DEVIL FRUIT========");
+        System.out.println("Name: " + name);
+        System.out.println("Type: " + type);
+        System.out.println("Power: " + power);
+        System.out.println("============================\n");
+    }
+
     public String getName() {
         return name;
     }

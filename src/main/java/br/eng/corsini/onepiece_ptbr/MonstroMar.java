@@ -15,6 +15,7 @@ public class MonstroMar extends Ser{
         this.numeroDentes = numeroDentes;
     }
 
+    @Override
     public void print(){
         System.out.println("====MONSTRO DO MAR====");
         super.print();

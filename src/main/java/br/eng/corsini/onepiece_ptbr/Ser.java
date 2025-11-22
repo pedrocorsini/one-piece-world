@@ -13,6 +13,7 @@ public abstract class Ser {
     private FrutaDoDiabo fruta;
     private List<HakiEnum> hakis = new ArrayList<>();
     private List<TesouroSecreto> tesouros = new ArrayList<>();
+    private boolean podeNadar;
 
     // Construtor
 
@@ -24,6 +25,14 @@ public abstract class Ser {
         this.nasceu = nasceu;
     }
 
+    public void podeNadar(){
+        if(getFruta()==null){
+            setPodeNadar(true);
+        }else{
+            setPodeNadar(false);
+        }
+    }
+
     public void print(){
         System.out.println("Nome: " + nome);
         System.out.println("Idade: " + idade + " anos");
@@ -31,7 +40,9 @@ public abstract class Ser {
         System.out.println("Altura: " + altura + "m");
         System.out.println("Ilha de nascimento: " + (nasceu != null ? nasceu.getNome() : "Desconhecida"));
         System.out.println("Fruta do diabo: " + (fruta != null ? fruta.getNome() : "Nenhuma"));
-        //print dos hakis
+        podeNadar();
+        System.out.println("Pode nadar: " + (podeNadar ? "Sim" : "Nao"));
+        
         if(getHakis() == null || getHakis().isEmpty()){
             System.out.println("Hakis: Nenhum");
         }else{
@@ -69,6 +80,8 @@ public abstract class Ser {
             }
         }
     }
+
+
 
     public List<TesouroSecreto> getTesouros() {
         return tesouros;
@@ -126,5 +139,13 @@ public abstract class Ser {
 
     public void setHakis(List<HakiEnum> hakis) {
         this.hakis = hakis;
+    }
+
+    public boolean isPodeNadar() {
+        return podeNadar;
+    }
+
+    public void setPodeNadar(boolean podeNadar) {
+        this.podeNadar = podeNadar;
     }
 }

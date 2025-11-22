@@ -25,7 +25,7 @@ public class Poneglyph {
     }
 
     public void printPon(){
-        System.out.println("======================");
+        System.out.println("=======PONEGLYPH======");
         System.out.println("Mensagem: " + mensagem);
         System.out.println("Submerso: " + (submerso ? "Sim" : "Nao"));
         System.out.println("Ilha: " + (ilha != null ? ilha.getNome() : "Desconhecida"));

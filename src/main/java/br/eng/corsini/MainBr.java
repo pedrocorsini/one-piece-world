@@ -7,7 +7,7 @@ public class MainBr {
     
         // Criacao de Ilhas:
         Ilha dawn = new Ilha("Ilha Dawn", MarEnum.EASTBLUE, false);
-        dawn.getVilas().add("Vilha Fusha");
+        dawn.getVilas().add("Vilha Foosha");
         dawn.getVilas().add("Reino Goa");
         Ilha polestar = new Ilha("Ilha Polestar", MarEnum.EASTBLUE, false);
         polestar.getVilas().add("Loguetown");
@@ -16,11 +16,20 @@ public class MainBr {
         Ilha ilhapeixe = new Ilha("Ilha dos Homem-Peixe", MarEnum.NOVOMUNDO, true);
         ilhapeixe.getVilas().add("Reino Ryugu");
         Ilha baterilla = new Ilha("Ilha Baterilla", MarEnum.EASTBLUE, false);
+        Ilha wano = new Ilha("Pais de Wano", MarEnum.NOVOMUNDO, false);
+        wano.getVilas().add("Kuri");
+        wano.getVilas().add("Kibi");
+        wano.getVilas().add("Capital das Flores");
+        wano.getVilas().add("Ringo");
+        wano.getVilas().add("Udon");
+        wano.getVilas().add("Hakumai");
+        wano.getVilas().add("Onigashima ");
+        Ilha sabaody = new Ilha("Arquipelago Sabaody", MarEnum.NOVOMUNDO, false);
 
         // Criacao de Embarcacoes:
         Embarcacao sunny = new Embarcacao("Thousand Sunny", "Navio", "Madeira de Adao", "Caveira com Chapeu de Palha", false);
         Embarcacao orojackson = new Embarcacao("Oro Jackson", "Navio", "Madeira de Adao", "Caveira Roger", true);
-        Embarcacao naviogarp = new Embarcacao("Navio Monkey D. Garp", "Navio", "Carvalho", "Marinha", false);
+        Embarcacao naviogarp = new Embarcacao("Navio Monkey D. Garp", "Navio de Guerra", "Carvalho", "Marinha", false);
         Embarcacao mobydick = new Embarcacao("Moby Dick", "Navio", "Pinheiro", "Bandeira Barba Branca", true);
 
         // Criacao de Tripulacoes Piratas:
@@ -29,10 +38,11 @@ public class MainBr {
         TripulacaoPirata piratasbarbabranca = new TripulacaoPirata("Piratas do Barba Branca", true);
 
         //Criacao de Frutas do Diabo:
-        FrutaDoDiabo gomugomu = new FrutaDoDiabo("Fruta do Humano modelo Nika", "Deus do Sol Nika", "Zoan Mitica");
+        FrutaDoDiabo gomugomu = new FrutaDoDiabo("Fruta do Humano Modelo Nika", "Deus do Sol Nika", "Zoan Mitica");
         FrutaDoDiabo luz = new FrutaDoDiabo("Fruta da Luz", "Luz", "Logia");
         FrutaDoDiabo zushi = new FrutaDoDiabo("Zushi Zushi no Mi", "Gravidade", "Paramecia");
         FrutaDoDiabo meramera = new FrutaDoDiabo("Fruta do Fogo", "Fogo", "Logia");
+        FrutaDoDiabo dragaorosa = new FrutaDoDiabo("Fruta do Dragao Rosa", "Dragao", "Zoan Mitica");
 
         // Criacao de Piratas:
 
@@ -67,13 +77,28 @@ public class MainBr {
 
         // Ace
         Pirata ace = new Pirata("Portgas D. Ace", 20, false, 1.85f, baterilla, mobydick, "Ace Punhos de Fogo", piratasbarbabranca,
-            "Capitao da Terceira Divisao");
+            "Capitao da Segunda Divisao");
         ace.setRecompensa(550000000d);
         mobydick.getPiratas().add(ace);
         piratasbarbabranca.getTripulantes().add(ace);
         ace.setFruta(meramera);
         roger.getFilhos().add(ace);
-        
+
+        // Momonosuke
+        Pirata momo = new Pirata("Kozuki Momonosuke", 8, true, 2.0f, wano, null, "Shogun do Pais de Wano", null, "Shogun");
+        momo.setFruta(dragaorosa);
+        wano.setGovernante(momo);
+
+        // Rayleigh
+        Pirata rayleigh = new Pirata("Silvers Rayleigh", 78, true, 1.88f, sabaody, orojackson, "Rei das Trevas", piratasroger,
+            "Primeiro Imediato");
+        rayleigh.setRecompensa(223233232d);
+        orojackson.getPiratas().add(rayleigh);
+        piratasroger.getTripulantes().add(rayleigh);
+        rayleigh.getHakis().add(HakiEnum.ARMAMENTO);
+        rayleigh.getHakis().add(HakiEnum.OBSERVACAO);
+        rayleigh.getHakis().add(HakiEnum.CONQUISTADOR);
+
         // Criacao de Marinheiros:
 
         // Garp
@@ -134,8 +159,12 @@ public class MainBr {
 
         // Criacao de Tesouro Secreto
 
-        TesouroSecreto enma = new TesouroSecreto("Enma", "Espada", 100000d, MarEnum.NOVOMUNDO, "Lendaria");
+        TesouroSecreto enma = new TesouroSecreto("Enma", "Katana", 100000d, MarEnum.NOVOMUNDO, "Lendaria");
         zoro.getTesouros().add(enma);
+        TesouroSecreto wadoIchimonji = new TesouroSecreto("Wado Ichimonji", "Katana", 100000d, MarEnum.EASTBLUE, "Lendaria");
+        zoro.getTesouros().add(wadoIchimonji);
+        TesouroSecreto sandai = new TesouroSecreto("Sandai Kitetsu", "Katana", 1000000000d, MarEnum.NOVOMUNDO, "Lendaria");
+        zoro.getTesouros().add(sandai);
 
         // One Piece
         OnePiece.getInstancia().setDescricao("Tesouro do Rei dos Piratas");
@@ -161,6 +190,8 @@ public class MainBr {
         ace.print();
         fujitora.print();
         kraken.print();
+        momo.print();
+        rayleigh.print();
 
         System.out.println("====FRUTAS DO DIABO===\n");
         gomugomu.printFruta();
@@ -174,7 +205,7 @@ public class MainBr {
         mobydick.printEmbarcacao();
         naviogarp.printEmbarcacao();
 
-        System.out.println("=====TRIPULACOES=====");
+        System.out.println("=====TRIPULACOES======\n");
         mugiwara.printTripulacao();
         piratasbarbabranca.printTripulacao();
         piratasroger.printTripulacao();
@@ -185,6 +216,7 @@ public class MainBr {
         zoroilha.printInfo();
         ilhapeixe.printInfo();
         baterilla.printInfo();
+        wano.printInfo();
 
         System.out.println("======PONEGLYPHS======\n");
         poneglyph.printPon();
@@ -217,6 +249,8 @@ public class MainBr {
 
         System.out.println("==TESOUROS SECRETOS===\n");
         enma.printTesouro();
+        wadoIchimonji.printTesouro();
+        sandai.printTesouro();
 
     }
 }

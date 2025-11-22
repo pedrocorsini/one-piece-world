@@ -24,7 +24,7 @@ public class Embarcacao {
     
     // Print
     public void printEmbarcacao(){
-        System.out.println("======================");
+        System.out.println("======EMBARCACAO======");
         System.out.println("Nome: " + nome);
         System.out.println("Tipo: " + tipo);
         System.out.println("Madeira: " + madeira);
