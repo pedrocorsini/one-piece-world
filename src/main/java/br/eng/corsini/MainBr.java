@@ -43,6 +43,7 @@ public class MainBr {
         FrutaDoDiabo zushi = new FrutaDoDiabo("Zushi Zushi no Mi", "Gravidade", "Paramecia");
         FrutaDoDiabo meramera = new FrutaDoDiabo("Fruta do Fogo", "Fogo", "Logia");
         FrutaDoDiabo dragaorosa = new FrutaDoDiabo("Fruta do Dragao Rosa", "Dragao", "Zoan Mitica");
+        FrutaDoDiabo magma = new FrutaDoDiabo("Fruta do Magma", "Magma", "Logia");
 
         // Criacao de Piratas:
 
@@ -116,17 +117,19 @@ public class MainBr {
         kizaru.getHakis().add(HakiEnum.ARMAMENTO);
 
         // Fujitora        
-        Marinheiro fujitora = new Marinheiro("Fujitora Issho", 54, true, 2.7f, null, "Almirante", 1000, "Esgrima", null, null);
+        Marinheiro fujitora = new Marinheiro("Fujitora Issho", 54, true, 2.70f, null, "Almirante", 1000, "Esgrima", null, null);
         fujitora.setFruta(zushi);
         fujitora.getHakis().add(HakiEnum.ARMAMENTO);
         fujitora.getHakis().add(HakiEnum.OBSERVACAO);
 
         // Akainu
         Marinheiro akainu = new Marinheiro("Sakazuki Akainu", 55, true, 3.06f, null, "Almirante da Frota", 1, 
-        "Super Pulo", null, "Cachorro Vermelho");
+        "Soco de Magma", null, "Cachorro Vermelho");
+        akainu.setFruta(magma);
 
         // Criacao de Homem Peixe:
-
+        
+        HomemPeixe jinbe = new HomemPeixe("Jinbe", 46, true, 3.01f, ilhapeixe, "Tubarão-Baleia", 438);
         HomemPeixe netuno = new HomemPeixe("Rei Netuno", 70, true, 12.2f, ilhapeixe, "Sereiano", 200);
 
         // Criacao de Sereia
@@ -146,9 +149,9 @@ public class MainBr {
 
         // Criacao de Poneglyphs e RoadPoneglyphs
 
-        Poneglyph poneglyph = new Poneglyph("Ha 800 anos atras o mundo afundou!", true, ilhapeixe);
-        Poneglyph rp1 = new Poneglyph("Voce nao achou o One Piece", false, polestar);
-        Poneglyph rp2 = new Poneglyph("Voce achou a verdadeira coordenada do OnePiece!", false, null);
+        Poneglyph poneglyph = new Poneglyph(" Poneglyph Comum","Ha 800 anos atras o mundo afundou!", true, ilhapeixe);
+        Poneglyph rp1 = new Poneglyph("Road Poneglyph", "Voce nao achou o One Piece", false, polestar);
+        Poneglyph rp2 = new Poneglyph("Road Poneglyph","Voce achou a verdadeira coordenada do OnePiece!", false, null);
 
         // Criacao de Base Marinha
 
@@ -192,12 +195,15 @@ public class MainBr {
         kraken.print();
         momo.print();
         rayleigh.print();
+        jinbe.print();
 
         System.out.println("====FRUTAS DO DIABO===\n");
         gomugomu.printFruta();
         meramera.printFruta();
         zushi.printFruta();
         luz.printFruta();
+        dragaorosa.printFruta();
+        magma.printFruta();
     
         System.out.println("======EMBARCACOES=====\n");
         orojackson.printEmbarcacao();
@@ -217,6 +223,7 @@ public class MainBr {
         ilhapeixe.printInfo();
         baterilla.printInfo();
         wano.printInfo();
+        sabaody.printInfo();
 
         System.out.println("======PONEGLYPHS======\n");
         poneglyph.printPon();
@@ -251,6 +258,15 @@ public class MainBr {
         enma.printTesouro();
         wadoIchimonji.printTesouro();
         sandai.printTesouro();
+
+        System.out.println("MULTIPLICANDO RECOMPENSAS");
+        luffy.multiplicarRecompensa(2);
+        System.out.println("Luffy nova recompensa: $" + String.format("%.2f", luffy.getRecompensa()));
+        zoro.multiplicarRecompensa(3);
+        System.out.println("Zoro nova recompensa: $" + String.format("%.2f", zoro.getRecompensa()));
+        System.out.println("");
+        luffy.print();
+        zoro.print();
 
     }
 }

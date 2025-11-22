@@ -40,8 +40,8 @@ public class Pirate extends Being{
     }
 
 
-    public double multiplyBounty(Pirate p, double v){
-        return p.getBounty()*v;
+    public void multiplyBounty(double v){
+        setBounty(getBounty()*v);
     }
     public void evaluate(){
         state.transition(this);

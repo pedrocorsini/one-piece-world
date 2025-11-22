@@ -1,6 +1,7 @@
 package br.eng.corsini.onepiece_ptbr;
 
 public class Poneglyph {
+    private String tipo;
     private String mensagem;
     private boolean submerso;
     private Ilha ilha;
@@ -8,7 +9,8 @@ public class Poneglyph {
 
     // Construtor
 
-    public Poneglyph(String mensagem, boolean submerso, Ilha ilha) {
+    public Poneglyph(String tipo, String mensagem, boolean submerso, Ilha ilha) {
+        this.tipo = tipo;
         this.mensagem = mensagem;
         this.submerso = submerso;
         this.ilha = ilha;
@@ -16,7 +18,7 @@ public class Poneglyph {
 
     public void localizarOnePiece(Poneglyph pon){
         if(pon.getMensagem() == "Voce achou a verdadeira coordenada do OnePiece!"){
-            pon.setCoordenadaMostrada("1999 N, 1997 L");
+            pon.setCoordenadaMostrada("1999 N, 1997 L - Laugh Tale");
             OnePiece.getInstancia().setLocalizacao(coordenadaMostrada);
             System.out.println("Va buscar o One Piece!");
         }else{
@@ -26,6 +28,7 @@ public class Poneglyph {
 
     public void printPon(){
         System.out.println("=======PONEGLYPH======");
+        System.out.println("Tipo: " + tipo);
         System.out.println("Mensagem: " + mensagem);
         System.out.println("Submerso: " + (submerso ? "Sim" : "Nao"));
         System.out.println("Ilha: " + (ilha != null ? ilha.getNome() : "Desconhecida"));
@@ -59,6 +62,14 @@ public class Poneglyph {
 
     public void setCoordenadaMostrada(String coordenadaMostrada) {
         this.coordenadaMostrada = coordenadaMostrada;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
     
 }

@@ -1,13 +1,15 @@
 package br.eng.corsini.onepiece_en;
 
 public class Poneglyph {
+    private String type;
     private String message;
     private boolean submerged;
     private Island island;
     private String displayedCoordinate;
 
     // Constructor
-    public Poneglyph(String message, boolean submerged, Island island) {
+    public Poneglyph(String type, String message, boolean submerged, Island island) {
+        this.type = type;
         this.message = message;
         this.submerged = submerged;
         this.island = island;
@@ -15,7 +17,7 @@ public class Poneglyph {
 
     public void locateOnePiece(Poneglyph pon){
         if(pon.getMessage() == "You have found the true coordinate of OnePiece!"){
-            pon.setDisplayedCoordinate("1999 N, 1997 E");
+            pon.setDisplayedCoordinate("1999 N, 1997 E - Laugh Tale");
             OnePiece.getInstance().setLocation(displayedCoordinate);
             System.out.println("Go get the One Piece!");
         }else{
@@ -25,6 +27,7 @@ public class Poneglyph {
 
     public void printPon(){
         System.out.println("=======PONEGLYPH======");
+        System.out.println("Type: " + type);
         System.out.println("Message: " + message);
         System.out.println("Submerged: " + (submerged ? "Yes" : "No"));
         System.out.println("Island: " + (island != null ? island.getName() : "Unknown"));
@@ -57,5 +60,13 @@ public class Poneglyph {
 
     public void setDisplayedCoordinate(String displayedCoordinate) {
         this.displayedCoordinate = displayedCoordinate;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

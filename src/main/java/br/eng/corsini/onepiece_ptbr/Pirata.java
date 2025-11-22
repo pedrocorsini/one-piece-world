@@ -39,8 +39,8 @@ public class Pirata extends Ser{
         System.out.println("======================\n");
     }
 
-    public double multiplicarRecompensa(Pirata p, double v){
-        return p.getRecompensa()*v;
+    public void multiplicarRecompensa(double v){
+        setRecompensa(getRecompensa()*v);
     }
     public void avaliar(){
         estado.transicao(this);
