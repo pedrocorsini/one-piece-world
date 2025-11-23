@@ -3,7 +3,6 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/pedrocorsini/ecot12?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/pedrocorsini/ecot12?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/pedrocorsini/ecot12?style=for-the-badge)
-![Status](https://img.shields.io/badge/status-learning-blue?style=for-the-badge)
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
@@ -72,7 +71,7 @@ one-piece-world/
    ```
 4. **Run the project**
    ```bash
-   mvn exec:java -Dexec.mainClass="<package-name>.<MainClass>"
+   mvn exec:java -Dexec.mainClass="br.eng.corsini.<MainClass>"
    ```
 
 ## ✨ Author
