@@ -18,14 +18,16 @@ public class HomemPeixe extends Ser{
         System.out.println("=====HOMEM-PEIXE======");
         super.print();
         System.out.println("Tipo: " + tipo);
+        dobrarVelocidade();
         System.out.println("Velocidade na agua: " + velocidadeAgua + "m/s");
         System.out.println("======================\n");
     }
 
-    public void dobrarVelocidade(HomemPeixe peixe){
-        if(peixe.getAltura() > 2.0f)
-            peixe.setVelocidadeAgua(peixe.getVelocidadeAgua() * 2);
+    public void dobrarVelocidade(){
+        if(getAltura() > 2.0f)
+            setVelocidadeAgua(getVelocidadeAgua() * 2);
     }
+
     public String getTipo() {
         return tipo;
     }

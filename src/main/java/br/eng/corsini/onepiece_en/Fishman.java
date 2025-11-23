@@ -17,13 +17,14 @@ public class Fishman extends Being {
         System.out.println("========FISHMAN========");
         super.print();
         System.out.println("Type: " + type);
+        doubleSpeed();
         System.out.println("Water Speed: " + waterSpeed + "m/s");
         System.out.println("======================\n");
     }
 
-    public void doubleSpeed(Fishman fishman) {
-        if (fishman.getHeight() > 2.0f)
-            fishman.setWaterSpeed(fishman.getWaterSpeed() * 2);
+    public void doubleSpeed() {
+        if (getHeight() > 2.0f)
+            setWaterSpeed(getWaterSpeed() * 2);
     }
     public String getType() {
         return type;
