@@ -15,7 +15,7 @@ This repository is a Java Project about the **One Piece World**, the goal is to 
 - Built with **Java** (Maven project structure).
 - Includes **source code, UML diagrams, and project configuration**.
 
-## 📂 Repository Structe
+## 📂 Repository Structure
 
 ```plaintext
 one-piece-world/
