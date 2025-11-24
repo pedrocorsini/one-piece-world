@@ -167,7 +167,7 @@ public class MainEn {
         // PRINTS
 
         System.out.println("\n======================");
-        System.out.println("ONE PIECE WORLD");
+        System.out.println("    ONE PIECE WORLD    ");
         System.out.println("======================\n");
 
         System.out.println("========BEINGS========\n");
