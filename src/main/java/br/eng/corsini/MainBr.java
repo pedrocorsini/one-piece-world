@@ -1,3 +1,6 @@
+// Autor: Pedro Corsini
+// Repositório do GitHub: github.com/pedrocorsini/one-piece-world
+
 package br.eng.corsini;
 
 import br.eng.corsini.onepiece_ptbr.*;
